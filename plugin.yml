@@ -1,0 +1,7 @@
+ name: ArchRPGDrops
+ version: 1#Beta
+ main: ArchRPGDrops\Main
+ api:
+ - 1.13.0
+ - 2.0.0
+ authors: GamerXzavier
