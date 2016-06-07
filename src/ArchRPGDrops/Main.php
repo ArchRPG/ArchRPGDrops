@@ -18,7 +18,6 @@ use pocketmine\item\Item;
         $p = $e->getPlayer();
          $lvl = $p->getLevel();
          $item = Item::get(322,1,1);
-         $item = Item::get(384,0,1);
          $lvl->dropItem($p, $item);
       }
  }
