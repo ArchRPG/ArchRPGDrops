@@ -1,23 +1,22 @@
 <?php
 
-
 namespace ArchRPGDrops;
-  
-use pocketmine\event\player\PlayerDeathEvent;
+
 use pocketmine\event\Listener;
-use pocketmine\plugin\PluginBase;
+use pocketmine\event\player\PlayerDeathEvent;
+use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\item\Item;
-  
-  class Main extends PluginBase implements Listener{
-      
-      public function onEnable(){
-          $this->getServer()->getPluginManager()->registerEvents($this,$this);
-      }
-      
-    public function onDeath(PlayerDeathEvent $e){
-        $p = $e->getPlayer();
-         $lvl = $p->getLevel();
-         $item = Item::get(322,1,1);
-         $lvl->dropItem($p, $item);
-      }
- }
+
+class Listener implements Listener {
+
+    public function onDeath(PlayerDeathEvent $event) {
+        $cause = $event->getEntity()->getLastDamageCause()->getCause();
+        if($cause instanceof EntityDamageByEntityEvent) {
+            $event->setDrops([Item::get(Item::GOLDEN_APPLE, 0, 1)]);
+            $event->setDrops([Item::get(Item::ENCHANTING_BOTTLE, 0, 1)]);
+            
+        }
+        
+    }
+    
+}
