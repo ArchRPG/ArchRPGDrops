@@ -5,4 +5,4 @@ Public Plugin From My Private Server ArchRPG.
 * Random Items Drops.
 
 # Description:
-When Player Die The Player Will Drops GoldenApples And ExpBottles.
+When Player Die The Player Will Drops GoldenApples.
