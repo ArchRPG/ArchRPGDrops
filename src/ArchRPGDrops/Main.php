@@ -19,5 +19,7 @@ use pocketmine\item\Item;
          $lvl = $p->getLevel();
          $item = Item::get(322,1,1);
          $lvl->dropItem($p, $item);
+         $item = Item::get(384,0,1);
+         $lvl->dropItem($p, $item);
       }
  }
